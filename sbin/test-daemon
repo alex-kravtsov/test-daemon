@@ -1,0 +1,11 @@
+#!/bin/bash
+
+do_terminate () {
+    kill $COPROC_PID
+}
+
+trap do_terminate SIGHUP SIGINT SIGQUIT SIGABRT SIGTERM
+
+coproc python /opt/test-daemon/test-daemon.py
+
+wait $COPROC_PID

@@ -1,0 +1,21 @@
+#!/lib/init/init-d-script
+
+### BEGIN INIT INFO
+# Provides:          test-daemon
+# Required-Start:    $local_fs $remote_fs $network $syslog $named
+# Required-Stop:     $local_fs $remote_fs $network $syslog $named
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Sample system daemon
+# Description:       Simple system daemon example
+### END INIT INFO
+
+DESC="Simple system daemon example"
+DAEMON=/usr/sbin/test-daemon
+NAME=test-daemon
+PIDFILE=/var/run/test-daemon.pid
+START_ARGS="--background --make-pidfile --pidfile ${PIDFILE}"
+
+do_stop_override () {
+    start-stop-daemon --stop --oknodo --name $NAME --remove-pidfile --pidfile $PIDFILE --exec /bin/bash
+}

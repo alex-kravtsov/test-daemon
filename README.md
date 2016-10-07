@@ -8,7 +8,7 @@ The point is that the daemon program is not a binary. It is an interpreted shell
 
 ## Why System V
 
-The example is designed to use under Ubuntu or Debian distributives. Modern Ubuntu and Debian releases use different init tools (Upstart for Ubuntu and systemd for Debian) but both of them still support traditional System V approach.
+The example is designed to be used under Ubuntu or Debian distributives. Modern Ubuntu and Debian releases use different init tools (Upstart for Ubuntu and systemd for Debian) but both of them still support traditional System V approach.
 
 ## Installation
 
